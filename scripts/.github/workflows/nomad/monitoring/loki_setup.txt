@@ -1,0 +1,12 @@
+# Loki Setup Instructions
+
+1. Start Loki using Docker:
+   docker run -d --name=loki -p 3100:3100 grafana/loki:2.9.0
+
+2. View Loki logs:
+   docker logs loki
+
+3. (Optional) Start Promtail to forward container logs:
+   docker run -d --name=promtail -v /var/log:/var/log -p 9080:9080 grafana/promtail:2.9.0
+
+4. (Optional) Use Grafana to connect to Loki and explore logs.
